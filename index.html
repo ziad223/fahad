@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الفهاد للأغذية - Fahad Foods</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="شركة الفهاد التجارية للأغذية هي واحدة من أعرق الشركات في سوريا، نقدم أجود أنواع المواد الغذائية بأسعار تنافسية تحت علاماتنا التجارية: الفهاد، أروى، وهمسة صيف." />
+    <meta name="keywords" content="مواد غذائية, سوريا, الفهاد, أروى, همسة صيف, ألبان, أجبان, عسل, منتجات غذائية, زيوت, دجاج, مأكولات" />
+    <meta name="author" content="Fahad Foods" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fahadfoods.com/" />
+    <meta property="og:title" content="الفهاد للأغذية - Fahad Foods" />
+    <meta property="og:description" content="شركة الفهاد التجارية للأغذية هي واحدة من أعرق الشركات في سوريا، نقدم أجود أنواع المواد الغذائية." />
+    <meta property="og:image" content="./images/fahad-logo.jpeg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://fahadfoods.com/" />
+    <meta property="twitter:title" content="الفهاد للأغذية - Fahad Foods" />
+    <meta property="twitter:description" content="شركة الفهاد التجارية للأغذية هي واحدة من أعرق الشركات في سوريا، نقدم أجود أنواع المواد الغذائية." />
+    <meta property="twitter:image" content="./images/fahad-logo.jpeg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="./images/fahad-logo.jpeg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #0a0f1e;
+            color: #fff;
+        }
+
+        .gold {
+            color: #d4af37;
+        }
+
+        .bg-gold {
+            background: linear-gradient(135deg, #d4af37, #f59e0b);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #d4af37, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #d4af37, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #d4af37, #f59e0b);
+            border-radius: 4px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: all 0.4s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.15);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #d4af37, #f59e0b);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .img-cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .img-cover:hover {
+            transform: scale(1.05);
+        }
+
+        .reel-card {
+            aspect-ratio: 9/16;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            border: 2px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #1a1f35, #0a0f1e);
+        }
+
+        .reel-card:hover {
+            border-color: #d4af37;
+            transform: scale(1.02);
+        }
+
+        .reel-card .play-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .reel-card:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .reel-card .play-btn {
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 175, 55, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: #fff;
+            transform: scale(0.8);
+            transition: all 0.4s ease;
+        }
+
+        .reel-card:hover .play-btn {
+            transform: scale(1.1);
+        }
+
+        /* مودال */
+        .modal-reel {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-reel.active {
+            display: flex;
+        }
+
+        .modal-reel .modal-box {
+            background: #0a0f1e;
+            border-radius: 24px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            width: 95%;
+            max-width: 420px;
+            max-height: 90vh;
+            overflow: hidden;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-reel .modal-header {
+            padding: 12px 20px;
+            background: rgba(212, 175, 55, 0.05);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-reel .modal-header h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #d4af37;
+        }
+
+        .modal-reel .modal-close {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #d4af37;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-reel .modal-close:hover {
+            background: rgba(212, 175, 55, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .modal-reel .modal-body {
+            padding: 0;
+            height: calc(90vh - 80px);
+            max-height: 700px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+        }
+
+        .modal-reel .modal-body iframe {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 9/16;
+            border: none;
+        }
+
+        /* Image modal specific styles */
+        .modal-img-content {
+            padding: 0 !important;
+            background: transparent !important;
+            height: auto !important;
+            max-height: 90vh !important;
+            box-shadow: none !important;
+            border: none !important;
+        }
+        .modal-img-content img {
+            max-height: 90vh;
+            max-width: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .badge-gold {
+            background: linear-gradient(135deg, #d4af37, #f59e0b);
+            color: #0a0f1e;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(10, 15, 30, 0.85);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #d4af37, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-link {
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #d4af37;
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #d4af37, #f59e0b);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: #fff;
+        }
+
+        .hero-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.5;
+        }
+
+        .hero-glow-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #d4af37, transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-glow-2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #f59e0b, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(30px);
+            }
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            padding: 1rem 0;
+        }
+
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+            align-items: center;
+        }
+
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0f1e 0%, #1a1f35 50%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .logo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .logo-item img {
+            height: 64px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.2));
+            transition: all 0.3s ease;
+        }
+
+        .logo-item img:hover {
+            transform: scale(1.08);
+            filter: drop-shadow(0 4px 16px rgba(212, 175, 55, 0.4));
+        }
+
+        .logo-item span {
+            font-size: 12px;
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        @media (max-width: 640px) {
+            .logo-item img {
+                height: 44px;
+            }
+
+            .logo-container {
+                gap: 1rem;
+                padding: 0.75rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="nav-blur fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <img src="./images/fahad-logo.jpeg" alt="شعار الفهاد"
+                        class="h-10 md:h-12 w-auto rounded-lg shadow-md border border-gold/30" />
+                    <img src="./images/arwa-logo.jpeg" alt="شعار أروى"
+                        class="h-10 md:h-12 w-auto rounded-lg shadow-md border border-gold/30" />
+                    <img src="./images/hamsa-logo.jpg" alt="شعار همسة صيف"
+                        class="h-10 md:h-12 w-auto rounded-lg shadow-md border border-gold/30" />
+                </div>
+                <div class="hidden md:flex gap-8 items-center">
+                    <a href="#home" class="text-gray-300 hover:text-gold transition font-medium">الرئيسية</a>
+                    <a href="#products" class="text-gray-300 hover:text-gold transition font-medium">المنتجات</a>
+                    <a href="#reels" class="text-gray-300 hover:text-gold transition font-medium">الريلزات</a>
+                    <a href="#gallery" class="text-gray-300 hover:text-gold transition font-medium">المعرض</a>
+                    <a href="#contact"
+                        class="btn-gold text-slate-900 font-bold py-2 px-6 rounded-xl hover:scale-105 transition flex items-center gap-2">
+                        <i class="fas fa-phone"></i> تواصل معنا
+                    </a>
+                </div>
+                <button class="md:hidden text-white text-2xl" onclick="toggleMobile()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div id="mobileMenu"
+        class="hidden fixed top-20 inset-x-0 bg-slate-900/95 backdrop-blur z-40 md:hidden border-b border-gold/20">
+        <div class="flex flex-col p-6 gap-4">
+            <a href="#home" class="text-gray-300 hover:text-gold font-medium" onclick="toggleMobile()">الرئيسية</a>
+            <a href="#products" class="text-gray-300 hover:text-gold font-medium" onclick="toggleMobile()">المنتجات</a>
+            <a href="#reels" class="text-gray-300 hover:text-gold font-medium" onclick="toggleMobile()">الريلزات</a>
+            <a href="#gallery" class="text-gray-300 hover:text-gold font-medium" onclick="toggleMobile()">المعرض</a>
+            <a href="#contact" class="text-gray-300 hover:text-gold font-medium" onclick="toggleMobile()">تواصل</a>
+        </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero-bg pt-36 pb-32 relative overflow-hidden">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        
+        <!-- Animated Particles -->
+        <div class="absolute top-1/4 right-1/4 w-2 h-2 bg-gold rounded-full shadow-[0_0_10px_#d4af37] animate-pulse hidden md:block"></div>
+        <div class="absolute bottom-1/3 left-1/4 w-3 h-3 bg-gold rounded-full shadow-[0_0_15px_#d4af37] animate-[ping_3s_ease-in-out_infinite] hidden md:block"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <!-- Text Content -->
+                <div class="lg:col-span-5 space-y-8" style="animation: slideUp 1s ease-out;">
+                    <div class="relative inline-block">
+                        <span class="badge-gold relative z-10 px-6 py-2 text-sm uppercase tracking-wider rounded-full shadow-[0_0_20px_rgba(212,175,55,0.4)]">🌟 منتجات فاخرة بجودة عالمية</span>
+                        <div class="absolute inset-0 bg-gold blur-xl opacity-30 rounded-full animate-pulse"></div>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl font-black text-white leading-[1.2]">
+                        طعم <span class="text-gradient">الأصالة</span><br/>
+                        <span class="text-3xl md:text-5xl text-gray-300 font-bold mt-3 block">في كل تفصيلة</span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-gray-400 leading-relaxed border-r-4 border-gold pr-4 bg-gradient-to-l from-gold/5 to-transparent py-3">
+                        شركة <strong class="text-white">الفهاد للأغذية</strong> تقدم لك أفضل المنتجات الغذائية الفاخرة بأسعار تنافسية. أكثر من 15 عاماً من الثقة والتميز في السوق السوري.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#products"
+                            class="btn-gold text-slate-900 font-bold py-4 px-8 rounded-2xl flex-1 text-center text-lg shadow-[0_10px_40px_rgba(212,175,55,0.3)] hover:shadow-[0_15px_50px_rgba(212,175,55,0.5)] transition-all duration-300 group">
+                            اكتشف المنتجات <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-2 transition-transform"></i>
+                        </a>
+                        <a href="#contact"
+                            class="glass-card text-white font-bold py-4 px-8 rounded-2xl flex-1 text-center text-lg border border-gold/30 hover:bg-gold/10 transition-all duration-300">
+                            <i class="fas fa-phone ml-2 text-gold"></i> تواصل معنا
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center gap-6 pt-6">
+                        <div class="flex -space-x-4 space-x-reverse">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" class="w-12 h-12 rounded-full border-2 border-slate-900 shadow-lg z-30 relative" alt="Customer">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop" class="w-12 h-12 rounded-full border-2 border-slate-900 shadow-lg z-20 relative" alt="Customer">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop" class="w-12 h-12 rounded-full border-2 border-slate-900 shadow-lg z-10 relative" alt="Customer">
+                        </div>
+                        <div class="text-sm">
+                            <div class="flex text-gold text-lg">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-400 mt-1">أكثر من <strong class="text-white">10,000+</strong> عميل يثقون بنا</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Content (Structured Bento Grid) -->
+                <div class="lg:col-span-7 hidden lg:grid grid-cols-12 gap-5 h-[550px]">
+                    <!-- Large Main Image -->
+                    <div class="col-span-7 rounded-[2rem] overflow-hidden shadow-2xl relative group border border-slate-800/50">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=1000&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Main Product">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-right">
+                            <span class="bg-gold text-slate-900 text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block">الأكثر مبيعاً</span>
+                            <h3 class="text-2xl font-bold text-white mb-1">جودة لا تضاهى</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">ننتقي أفضل المكونات لنقدم لك طعماً فريداً ومميزاً في كل مرة.</p>
+                        </div>
+                    </div>
+
+                    <!-- Stacked Boxes (Images and Stats) -->
+                    <div class="col-span-5 grid grid-rows-2 gap-5">
+                        <div class="rounded-[2rem] overflow-hidden shadow-2xl relative group border border-slate-800/50">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&h=500&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Food">
+                        </div>
+                        
+                        <div class="rounded-[2rem] shadow-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-gold/20 flex flex-col items-center justify-center p-6 text-center group hover:border-gold/50 transition-colors">
+                            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center text-gold text-3xl mx-auto mb-4 group-hover:scale-110 group-hover:bg-gold/20 transition-all">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">علامات تجارية</h3>
+                            <p class="text-gray-400 text-sm mt-2">موثوقة ومسجلة في السوق السوري</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Fallback (Structured) -->
+                <div class="lg:hidden mt-8 grid grid-cols-2 gap-4 h-[350px]">
+                    <div class="col-span-2 rounded-[2rem] overflow-hidden shadow-2xl relative border border-slate-800/50 h-[220px]">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop" class="w-full h-full object-cover" alt="Mobile Hero">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                        <div class="absolute bottom-4 right-4 left-4 text-right">
+                            <h3 class="text-xl font-bold text-white">جودة لا تضاهى</h3>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-800/50">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" class="w-full h-full object-cover" alt="Food">
+                    </div>
+                    <div class="rounded-2xl bg-slate-800 border border-gold/20 flex flex-col items-center justify-center p-4 text-center">
+                        <i class="fas fa-award text-gold text-2xl mb-2"></i>
+                        <p class="text-white font-bold text-sm">علامة موثوقة</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="py-20 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="stat-number">+25</div>
+                    <p class="text-gray-400 mt-2">سنة خبرة</p>
+                </div>
+                <div>
+                    <div class="stat-number">+150</div>
+                    <p class="text-gray-400 mt-2">شريك تجاري</p>
+                </div>
+                <div>
+                    <div class="stat-number">+500</div>
+                    <p class="text-gray-400 mt-2">منتج متنوع</p>
+                </div>
+                <div>
+                    <div class="stat-number">+10K</div>
+                    <p class="text-gray-400 mt-2">عميل سعيد</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="badge-gold">من نحن</span>
+                    <h2 class="section-title mt-4">ريادة في عالم الأغذية</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mt-6">شركة <strong class="gold">الفهاد</strong>
+                        التجارية للأغذية هي واحدة من أعرق الشركات في سوريا، نقدم أجود أنواع المواد الغذائية بأسعار
+                        تنافسية. نمتلك ثلاث علامات تجارية: <strong class="gold">الفهاد، أروى، همسة صيف</strong>، تغطي جميع
+                        احتياجات السوق.</p>
+                    <p class="text-gray-400 text-lg leading-relaxed mt-4">نعمل وفق أعلى معايير الجودة ونفخر بثقة عملائنا
+                        الكرام.</p>
+                    <a href="#contact"
+                        class="btn-gold text-white font-bold py-3 px-8 rounded-xl inline-flex items-center gap-2 mt-6">
+                        <i class="fas fa-phone"></i> تواصل معنا
+                    </a>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-2xl h-96">
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop&crop=center"
+                        class="w-full h-full object-cover" alt="فريق العمل" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS ===== -->
+    <section id="products" class="py-24 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="badge-gold">✨ منتجاتنا</span>
+                <h2 class="section-title mt-4">مجموعة متنوعة من المنتجات</h2>
+                <p class="text-gray-400 text-xl mt-4">نختار لك الأفضل بأعلى معايير الجودة</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="feature-icon mb-6"><i class="fas fa-cheese"></i></div>
+                    <h3 class="text-2xl font-bold text-white mb-4">منتجات الألبان</h3>
+                    <p class="text-gray-400 mb-6">منتجات ألبان طازة وعالية الجودة تم اختيارها بعناية فائقة</p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center gap-3"><span class="w-2 h-2 bg-gold rounded-full"></span> الجبن
+                            الفاخر المستورد</li>
+                        <li class="flex items-center gap-3"><span class="w-2 h-2 bg-gold rounded-full"></span> الزبادي
+                            الطبيعي</li>
+                        <li class="flex items-center gap-3"><span class="w-2 h-2 bg-gold rounded-full"></span> الحليب
+                            الطازج يومياً</li>
+                    </ul>
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="btn-gold w-full text-white font-bold py-3 rounded-xl mt-6">اطلب الآن</button>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="feature-icon mb-6"><i class="fas fa-leaf"></i></div>
+                    <h3 class="text-2xl font-bold text-white mb-4">المنتجات الطبيعية</h3>
+                    <p class="text-gray-400 mb-6">منتجات طبيعية 100% خالية من المواد الحافظة والملونات</p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center gap-3"><span class="w-2 h-2 bg-gold rounded-full"></span> العسل
+                            الطبيعي النقي</li>
+                        <li class="flex items-center gap-3"><span class="w-2 h-2 bg-gold rounded-full"></span> الزيتون
+                            الفاخر</li>
+                        <li class="flex items-center gap-3"><span class="w-2 h-2 bg-gold rounded-full"></span> المكسرات
+                            المجففة</li>
+                    </ul>
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="btn-gold w-full text-white font-bold py-3 rounded-xl mt-6">اطلب الآن</button>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="feature-icon mb-6"><i class="fas fa-utensils"></i></div>
+                    <h3 class="text-2xl font-bold text-white mb-4">المنتجات الجاهزة</h3>
+                    <p class="text-gray-400 mb-6">منتجات جاهزة الطهي بجودة عالية وطعم لا يُنسى</p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center gap-3"><span class="w-2 h-2 bg-gold rounded-full"></span> الدجاج
+                            المجمد الفاخر</li>
+                        <li class="flex items-center gap-3"><span class="w-2 h-2 bg-gold rounded-full"></span> اللحوم
+                            المختارة بعناية</li>
+                        <li class="flex items-center gap-3"><span class="w-2 h-2 bg-gold rounded-full"></span> المأكولات
+                            البحرية</li>
+                    </ul>
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="btn-gold w-full text-white font-bold py-3 rounded-xl mt-6">اطلب الآن</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY - صور كتير من النت ===== -->
+    <section id="gallery" class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="badge-gold">📸 المعرض</span>
+                <h2 class="section-title mt-4">اطلع على أعمالنا</h2>
+                <p class="text-gray-400 text-xl mt-4">صور احترافية من عمليات الإنتاج والمنتجات المميزة</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="rounded-2xl overflow-hidden h-64 shadow-xl cursor-pointer" onclick="openImage(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=500&h=400&fit=crop"
+                        class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="رز فاخر" />
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 shadow-xl cursor-pointer" onclick="openImage(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=500&h=400&fit=crop"
+                        class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="مكرونة" />
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 shadow-xl cursor-pointer" onclick="openImage(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=500&h=400&fit=crop"
+                        class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="لحوم" />
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 shadow-xl cursor-pointer" onclick="openImage(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1567306301408-9b74779a11af?w=500&h=400&fit=crop"
+                        class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="أسماك" />
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 shadow-xl cursor-pointer" onclick="openImage(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&h=400&fit=crop"
+                        class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="وجبات" />
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 shadow-xl cursor-pointer" onclick="openImage(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=500&h=400&fit=crop"
+                        class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="دجاج" />
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 shadow-xl cursor-pointer" onclick="openImage(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&h=400&fit=crop"
+                        class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="ألبان" />
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 shadow-xl cursor-pointer" onclick="openImage(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500&h=400&fit=crop"
+                        class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="بقوليات" />
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 shadow-xl cursor-pointer" onclick="openImage(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=500&h=400&fit=crop"
+                        class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="زيتون وزيت" />
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 shadow-xl cursor-pointer" onclick="openImage(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&h=400&fit=crop"
+                        class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="مكسرات" />
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 shadow-xl cursor-pointer" onclick="openImage(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1464306208223-e0b4495a5553?w=500&h=400&fit=crop"
+                        class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="عسل" />
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 shadow-xl cursor-pointer" onclick="openImage(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=500&h=400&fit=crop"
+                        class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="مخبوزات" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REELS ===== -->
+    <section id="reels" class="py-24 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="badge-gold">🎬 ريلز</span>
+                <h2 class="section-title mt-4">شاهد أحدث الفيديوهات</h2>
+                <p class="text-gray-400 text-xl mt-4">اضغط على أي ريل لمشاهدته بحجم كبير</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <!-- 18 Reels -->
+                <div class="reel-card group" onclick="openReel('4311187992544686')">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 1">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('2033836034203106')">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 2">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('2122178975160305')">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 3">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('1672305290556654')">
+                    <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 4">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('1645011980046722')">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 5">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('1354561746595789')">
+                    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 6">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('2186159248787048')">
+                    <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 7">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('1416932216869929')">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 8">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('838971068759568')">
+                    <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 9">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('963226029662276')">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 10">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('956501000472564')">
+                    <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 11">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('1858110414858525')">
+                    <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 12">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('1500705811721803')">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 13">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('2034283007520478')">
+                    <img src="https://images.unsplash.com/photo-1567306301408-9b74779a11af?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 14">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('1889436135027610')">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 15">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('1653722232488340')">
+                    <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 16">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('2355477334950823')">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 17">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+                <div class="reel-card group" onclick="openReel('1581896366364379')">
+                    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=700&fit=crop"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                        alt="Reel 18">
+                    <div class="play-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TEAM ===== -->
+    <section class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="badge-gold">👥 فريقنا</span>
+                <h2 class="section-title mt-4">نخبة من الخبراء</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=center"
+                        class="w-32 h-32 rounded-full mx-auto shadow-xl border-2 border-gold" alt="أحمد" />
+                    <h4 class="text-white font-bold mt-4">أحمد الفهاد</h4>
+                    <p class="text-gray-400 text-sm">المدير العام</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=center"
+                        class="w-32 h-32 rounded-full mx-auto shadow-xl border-2 border-gold" alt="سارة" />
+                    <h4 class="text-white font-bold mt-4">سارة الأرناؤوط</h4>
+                    <p class="text-gray-400 text-sm">مدير التسويق</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=center"
+                        class="w-32 h-32 rounded-full mx-auto shadow-xl border-2 border-gold" alt="خالد" />
+                    <h4 class="text-white font-bold mt-4">خالد الحمصي</h4>
+                    <p class="text-gray-400 text-sm">مدير المبيعات</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=center"
+                        class="w-32 h-32 rounded-full mx-auto shadow-xl border-2 border-gold" alt="ليلى" />
+                    <h4 class="text-white font-bold mt-4">ليلى الشام</h4>
+                    <p class="text-gray-400 text-sm">مسؤول الجودة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PARTNERS ===== -->
+    <section class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="badge-gold">🤝 شركاؤنا</span>
+            <h2 class="section-title mt-4">نفخر بشراكاتنا</h2>
+            <div class="marquee-container mt-12" dir="ltr">
+                <div class="marquee-content gap-10">
+                    <!-- First Set -->
+                    <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 1" />
+                    <img src="https://images.unsplash.com/photo-1554774853-719586f82d77?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 2" />
+                    <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 3" />
+                    <img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 4" />
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 5" />
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 6" />
+                    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 7" />
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 8" />
+
+                    <!-- Duplicate Set for Infinite Scroll -->
+                    <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 1" />
+                    <img src="https://images.unsplash.com/photo-1554774853-719586f82d77?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 2" />
+                    <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 3" />
+                    <img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 4" />
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 5" />
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 6" />
+                    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 7" />
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=150&h=80&fit=crop"
+                        class=" transition rounded shadow-lg  h-16 w-auto object-cover"
+                        alt="شريك 8" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="py-24 bg-slate-950 relative">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 right-20 w-96 h-96 bg-gold rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="badge-gold">💬 تواصل معنا</span>
+                <h2 class="section-title mt-4">نحن هنا لخدمتك</h2>
+                <p class="text-gray-400 text-xl mt-4">اتصل بنا أو اترك لنا رسالة</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <a href="tel:0986022225"
+                        class="glass-card p-6 rounded-2xl flex items-center gap-4 hover:border-gold/50 transition">
+                        <div class="w-16 h-16 bg-gold rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-mobile-alt text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm">جوال</p>
+                            <p class="text-white text-2xl font-bold">0986022225</p>
+                        </div>
+                    </a>
+                    <a href="tel:0933320674"
+                        class="glass-card p-6 rounded-2xl flex items-center gap-4 hover:border-gold/50 transition">
+                        <div class="w-16 h-16 bg-gold rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone-alt text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm">جوال</p>
+                            <p class="text-white text-2xl font-bold">0933320674</p>
+                        </div>
+                    </a>
+                    <a href="tel:6929225"
+                        class="glass-card p-6 rounded-2xl flex items-center gap-4 hover:border-gold/50 transition">
+                        <div class="w-16 h-16 bg-gold rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm">هاتف أرضي</p>
+                            <p class="text-white text-2xl font-bold">6929225</p>
+                        </div>
+                    </a>
+                    <a href="https://maps.app.goo.gl/E4Q3FokkzMgPVSbn9" target="_blank"
+                        class="glass-card p-6 rounded-2xl flex items-center gap-4 hover:border-gold/50 transition">
+                        <div class="w-16 h-16 bg-gold rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm">الموقع</p>
+                            <p class="text-white text-2xl font-bold">Google Maps</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <form onsubmit="handleSubmit(event)" class="space-y-6">
+                        <div>
+                            <label class="block text-white font-semibold mb-2">الاسم الكامل</label>
+                            <input type="text" required
+                                class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-gray-500 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition"
+                                placeholder="أدخل اسمك" />
+                        </div>
+                        <div>
+                            <label class="block text-white font-semibold mb-2">البريد الإلكتروني</label>
+                            <input type="email" required
+                                class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-gray-500 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition"
+                                placeholder="بريدك@example.com" />
+                        </div>
+                        <div>
+                            <label class="block text-white font-semibold mb-2">رقم الهاتف</label>
+                            <input type="tel" required
+                                class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-gray-500 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition"
+                                placeholder="0xxxxxxxxx" />
+                        </div>
+                        <div>
+                            <label class="block text-white font-semibold mb-2">الرسالة</label>
+                            <textarea rows="4" required
+                                class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-gray-500 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition resize-none"
+                                placeholder="أكتب رسالتك هنا..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-gold w-full text-white font-bold py-4 rounded-xl text-lg">
+                            <i class="fas fa-paper-plane ml-2"></i>إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER (RESTORED) ===== -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
+                            <i class="fas fa-crown text-white"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg">الفهاد</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm">متخصصون في تقديم أفضل منتجات غذائية فاخرة بجودة عالية منذ أكثر من
+                        15 سنة</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#home" class="footer-link hover:text-gold transition">الرئيسية</a></li>
+                        <li><a href="#products" class="footer-link hover:text-gold transition">المنتجات</a></li>
+                        <li><a href="#reels" class="footer-link hover:text-gold transition">الريلزات</a></li>
+                        <li><a href="#gallery" class="footer-link hover:text-gold transition">المعرض</a></li>
+                        <li><a href="#contact" class="footer-link hover:text-gold transition">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold mb-4">المنتجات</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#products" class="footer-link hover:text-gold transition">منتجات الألبان</a></li>
+                        <li><a href="#products" class="footer-link hover:text-gold transition">المنتجات الطبيعية</a></li>
+                        <li><a href="#products" class="footer-link hover:text-gold transition">المنتجات الجاهزة</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold mb-4">متابعة</h3>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/profile.php?id=100063668846503&rdid=CufWJBMPffOgedEt&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1JHos4AN7T%2F" target="_blank"
+                            class="w-12 h-12 bg-slate-800 hover:bg-gold rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition"><i
+                                class="fab fa-facebook-f text-lg"></i></a>
+                        <a href="https://www.instagram.com/fahad_trading_company?utm_source=qr&igsh=ZjE3eXlzYXllZHh0" target="_blank"
+                            class="w-12 h-12 bg-slate-800 hover:bg-gold rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition"><i
+                                class="fab fa-instagram text-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 text-center text-gray-500 text-sm">
+                &copy; 2024 الفهاد للأغذية. جميع الحقوق محفوظة
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MODAL REEL ===== -->
+    <div id="reelModal" class="modal-reel">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fas fa-play gold ml-2"></i>فيديو</h3>
+                <button class="modal-close" onclick="closeReel()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="reelContainer"></div>
+        </div>
+    </div>
+
+    <!-- ===== IMAGE MODAL ===== -->
+    <div id="imageModal" class="modal-reel" style="z-index: 100;">
+        <div class="modal-box modal-img-content" style="max-width: 900px;">
+            <div class="modal-header" style="border: none; background: transparent; position: absolute; right: 10px; top: 10px; z-index: 10; padding: 0;">
+                <button class="modal-close" onclick="closeImage()" style="background: rgba(0,0,0,0.6); color: #fff; border: none; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body modal-img-content">
+                <img id="modalImageSrc" src="" alt="Gallery Image" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle mobile menu
+        function toggleMobile() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        // Open Reel with autoplay and sound
+        function openReel(reelId) {
+            const modal = document.getElementById('reelModal');
+            const container = document.getElementById('reelContainer');
+            // Added &autoplay=1 and &mute=0 to ensure sound works
+            const embed = `
+                <iframe 
+                    src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${reelId}%2F&show_text=false&autoplay=1&mute=0"
+                    width="100%" 
+                    height="100%" 
+                    style="border:none;overflow:hidden;" 
+                    scrolling="no" 
+                    frameborder="0" 
+                    allowfullscreen="true" 
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+            `;
+            container.innerHTML = embed;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close Reel
+        function closeReel() {
+            document.getElementById('reelModal').classList.remove('active');
+            document.getElementById('reelContainer').innerHTML = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Open Image Modal
+        function openImage(src) {
+            document.getElementById('modalImageSrc').src = src;
+            document.getElementById('imageModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close Image Modal
+        function closeImage() {
+            document.getElementById('imageModal').classList.remove('active');
+            document.getElementById('modalImageSrc').src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on outside click
+        document.getElementById('reelModal').addEventListener('click', function (e) {
+            if (e.target === this) closeReel();
+        });
+        document.getElementById('imageModal').addEventListener('click', function (e) {
+            if (e.target === this) closeImage();
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeReel();
+                closeImage();
+            }
+        });
+
+        // Handle form submit
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('✅ شكراً لك! تم استقبال رسالتك. سنتواصل معك قريباً 😊');
+            e.target.reset();
+        }
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobileMenu a').forEach(el => {
+            el.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden'));
+        });
+    </script>
+</body>
+
+</html>
