@@ -38,6 +38,12 @@
             overflow-x: hidden;
         }
 
+        /* Force LTR direction for numbers across Arabic and English */
+        [dir="ltr"], .num-ltr, .stat-value, input[type="tel"] {
+            direction: ltr !important;
+            unicode-bidi: isolate;
+        }
+
         .container-custom {
             max-width: 1200px;
             margin-left: auto;
@@ -490,6 +496,8 @@
                         data-en="About Us">من نحن</a>
                     <a href="#products" class="nav-link text-slate-600 hover:text-slate-900" data-ar="المنتجات"
                         data-en="Products">المنتجات</a>
+                    <a href="#why-us" class="nav-link text-slate-600 hover:text-slate-900" data-ar="لماذا الفهاد؟"
+                        data-en="Why Us">لماذا الفهاد؟</a>
                     <a href="#gallery" class="nav-link text-slate-600 hover:text-slate-900" data-ar="المعرض"
                         data-en="Gallery">المعرض</a>
                     <a href="#reels" class="nav-link text-slate-600 hover:text-slate-900" data-ar="الريلز"
@@ -528,6 +536,8 @@
                 نحن</a>
             <a href="#products" onclick="toggleMobile()" class="py-4 border-b" data-ar="المنتجات"
                 data-en="Products">المنتجات</a>
+            <a href="#why-us" onclick="toggleMobile()" class="py-4 border-b" data-ar="لماذا الفهاد؟"
+                data-en="Why Us">لماذا الفهاد؟</a>
             <a href="#gallery" onclick="toggleMobile()" class="py-4 border-b" data-ar="المعرض"
                 data-en="Gallery">المعرض</a>
             <a href="#reels" onclick="toggleMobile()" class="py-4 border-b" data-ar="الريلز" data-en="Reels">الريلز</a>
@@ -550,7 +560,7 @@
                 </div>
 
                 <h1 class="text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tighter mb-6">
-                    <span data-ar="جودة تستحق الثقة" data-en="Quality You Can Trust">جودة تستحق الثقة</span>
+                    <span data-ar="عراقة الماضي وأصالة الحاضر" data-en="Heritage of the Past, Authenticity of the Present">عراقة الماضي وأصالة الحاضر</span>
                 </h1>
 
                 <p class="text-2xl text-white/90 max-w-lg mx-auto mb-9"
@@ -579,22 +589,22 @@
         <div class="container-custom">
             <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-200">
                 <div class="py-9 px-6 text-center">
-                    <div class="stat-value">25</div>
+                    <div class="stat-value num-ltr" dir="ltr">25</div>
                     <div class="text-slate-500 mt-1 text-sm tracking-wider" data-ar="سنة خبرة"
                         data-en="Years of Excellence">سنة خبرة</div>
                 </div>
                 <div class="py-9 px-6 text-center">
-                    <div class="stat-value">150+</div>
+                    <div class="stat-value num-ltr" dir="ltr">150+</div>
                     <div class="text-slate-500 mt-1 text-sm tracking-wider" data-ar="شريك تجاري"
                         data-en="Business Partners">شريك تجاري</div>
                 </div>
                 <div class="py-9 px-6 text-center">
-                    <div class="stat-value">500+</div>
+                    <div class="stat-value num-ltr" dir="ltr">500+</div>
                     <div class="text-slate-500 mt-1 text-sm tracking-wider" data-ar="منتج متنوع"
                         data-en="Product Varieties">منتج متنوع</div>
                 </div>
                 <div class="py-9 px-6 text-center">
-                    <div class="stat-value">10K+</div>
+                    <div class="stat-value num-ltr" dir="ltr">10K+</div>
                     <div class="text-slate-500 mt-1 text-sm tracking-wider" data-ar="عميل سعيد"
                         data-en="Happy Customers">عميل سعيد</div>
                 </div>
@@ -631,7 +641,7 @@
                         <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&h=700&fit=crop"
                             class="w-full aspect-[16/13] object-cover hover:scale-105 transition duration-700" alt="Fahad Foods Team">
                         <div class="absolute bottom-6 right-6 bg-white/95 backdrop-blur-md px-6 py-4 rounded-2xl shadow-xl border border-white text-center transform hover:-translate-y-1 transition">
-                            <div class="text-3xl font-black text-[#B8860B] mb-1">25+</div>
+                            <div class="text-3xl font-black text-[#B8860B] mb-1 num-ltr" dir="ltr">25+</div>
                             <div class="text-xs font-bold text-slate-700 tracking-wide" data-ar="عاماً من الخبرة" data-en="Years Experience">عاماً من الخبرة</div>
                         </div>
                     </div>
@@ -640,23 +650,7 @@
         </div>
     </section>
 
-    <!-- OUR STORY -->
-    <section class="py-20 bg-[#F8F7F4]">
-        <div class="container-custom">
-            <div class="max-w-3xl mx-auto text-center">
-                <div class="section-label mb-3" data-ar="قصتنا" data-en="OUR STORY">قصتنا</div>
-                <h2 class="section-header mb-6" data-ar="من بداية بسيطة إلى ريادة"
-                    data-en="From Humble Beginnings to Leadership">من بداية بسيطة إلى ريادة</h2>
-                <p class="text-lg text-slate-600 leading-relaxed"
-                    data-ar="بدأت رحلة الفهاد عام 1999 بحلم بسيط: تقديم أجود المنتجات الغذائية للعائلة السورية. اليوم، بعد أكثر من 25 عاماً، أصبحنا واحدة من أكثر الشركات ثقة في سوريا، ونفخر بثلاث علامات تجارية تخدم آلاف العائلات يومياً."
-                    data-en="Our journey began in 1999 with a simple dream: to provide the highest quality food products to Syrian families. Today, after more than 25 years, we have become one of the most trusted companies in Syria.">
-                    بدأت رحلة الفهاد عام 1999 بحلم بسيط: تقديم أجود المنتجات الغذائية للعائلة السورية. اليوم، بعد أكثر
-                    من 25 عاماً، أصبحنا واحدة من أكثر الشركات ثقة في سوريا، ونفخر بثلاث علامات تجارية تخدم آلاف العائلات
-                    يومياً.
-                </p>
-            </div>
-        </div>
-    </section>
+
 
     <!-- QUALITY COMMITMENT -->
     <section class="py-20 bg-white">
@@ -818,107 +812,7 @@
         </div>
     </section>
 
-    <!-- (Old testimonials removed) -->
-    <!-- PARTNERS SECTION -->
-    <section class="py-16 bg-[#F8F7F4] border-y border-slate-200 overflow-hidden">
-        <div class="container-custom">
-            <div class="text-center mb-12">
-                <div class="section-label" data-ar="شركاء النجاح" data-en="OUR PARTNERS">شركاء النجاح</div>
-                <h2 class="section-header mt-2" data-ar="نعمل مع أفضل العلامات" data-en="We Work With The Best">نعمل مع
-                    أفضل العلامات</h2>
-            </div>
 
-            <div class="relative w-full overflow-hidden flex items-center" dir="ltr">
-                <div
-                    class="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-[#F8F7F4] to-transparent z-10 pointer-events-none">
-                </div>
-                <div
-                    class="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-[#F8F7F4] to-transparent z-10 pointer-events-none">
-                </div>
-
-                <div class="marquee-track">
-                    <!-- Set 1 -->
-                    <div class="flex gap-6 md:gap-10 pr-6 md:pr-10">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1516876437184-593fda40c7ce?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1496200186974-4293800e2c20?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1507206130118-b5907f817163?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1560415755-bd80d06eda60?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=400&h=400&fit=crop"
-                            alt="Brand">
-                    </div>
-                    <!-- Set 2 (Duplicate for seamless loop) -->
-                    <div class="flex gap-6 md:gap-10 pr-6 md:pr-10">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1516876437184-593fda40c7ce?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1496200186974-4293800e2c20?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1507206130118-b5907f817163?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1560415755-bd80d06eda60?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=400&h=400&fit=crop"
-                            alt="Brand">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- OUR BRANDS -->
     <section id="brands" class="py-20 bg-slate-50 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-72 h-72 bg-amber-200 rounded-full blur-[80px] opacity-30 -mr-20 -mt-20 pointer-events-none"></div>
@@ -957,6 +851,55 @@
                     </div>
                     <h3 class="text-2xl font-bold mb-3 text-slate-900" data-ar="همسة صيف" data-en="Hamsa Sayf">همسة صيف</h3>
                     <p class="text-slate-600 leading-relaxed font-medium" data-ar="خيارك الأمثل للمنتجات الطازجة وجاهزة الطهي والتي تضفي لمسة من المتعة والسهولة على وجباتك." data-en="Your ideal choice for fresh and ready-to-cook products that add a touch of joy and ease to your meals.">خيارك الأمثل للمنتجات الطازجة وجاهزة الطهي والتي تضفي لمسة من المتعة والسهولة على وجباتك.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why-us" class="py-24 bg-gradient-to-b from-white to-[#F8F7F4] border-t border-slate-100 relative overflow-hidden">
+        <div class="container-custom relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="section-label mb-3 text-[#B8860B]" data-ar="لماذا الفهاد؟" data-en="WHY CHOOSE US">لماذا الفهاد؟</div>
+                <h2 class="section-header text-slate-900" data-ar="معايير تضمن لك الأفضل دائماً" data-en="Standards Guaranteeing You The Best Always">معايير تضمن لك الأفضل دائماً</h2>
+                <p class="text-slate-600 text-lg mt-4" data-ar="نجمع بين جودة التصنيع العالية والالتزام التام بالسلامة الغذائية لتقديم منتجات تنال ثقة كل عائلة." data-en="We combine high manufacturing quality with full commitment to food safety to deliver products trusted by every family.">نجمع بين جودة التصنيع العالية والالتزام التام بالسلامة الغذائية لتقديم منتجات تنال ثقة كل عائلة.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="premium-card rounded-3xl p-8 bg-white border border-slate-200/80 flex flex-col items-start hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-16 h-16 rounded-2xl bg-amber-500/10 text-[#B8860B] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#B8860B] group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900" data-ar="طبيعي ونقي 100%" data-en="100% Pure & Natural">طبيعي ونقي 100%</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-ar="ننتقي مكوناتنا بعناية فائقة من أفضل المصادر الطبيعية الخالية من المضافات الضارة." data-en="We carefully select our ingredients from the finest natural sources free of harmful additives.">ننتقي مكوناتنا بعناية فائقة من أفضل المصادر الطبيعية الخالية من المضافات الضارة.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="premium-card rounded-3xl p-8 bg-white border border-slate-200/80 flex flex-col items-start hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900" data-ar="سلامة غذائية صارمة" data-en="Strict Food Safety">سلامة غذائية صارمة</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-ar="تخضع كافة خطوات التعبئة والتصنيع لدورة فحوصات مخبرية دقيقة لضمان أعلى مستويات الأمان." data-en="All packaging and manufacturing steps undergo precise lab tests to ensure the highest safety levels.">تخضع كافة خطوات التعبئة والتصنيع لدورة فحوصات مخبرية دقيقة لضمان أعلى مستويات الأمان.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="premium-card rounded-3xl p-8 bg-white border border-slate-200/80 flex flex-col items-start hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-500/10 text-blue-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900" data-ar="شبكة توزيع سريعة" data-en="Fast Distribution">شبكة توزيع سريعة</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-ar="أسطول مجهز بوسائل تبريد متطورة لنقل المنتجات طازجة وحفظ جودتها حتى وصولها للمستهلك." data-en="A fleet equipped with advanced cooling tools to transport products fresh and preserve quality.">أسطول مجهز بوسائل تبريد متطورة لنقل المنتجات طازجة وحفظ جودتها حتى وصولها للمستهلك.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="premium-card rounded-3xl p-8 bg-white border border-slate-200/80 flex flex-col items-start hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-16 h-16 rounded-2xl bg-amber-500/10 text-[#B8860B] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#B8860B] group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900" data-ar="خبرة وثقة 25 عاماً" data-en="25 Years of Trust">خبرة وثقة 25 عاماً</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-ar="مسيرة طويلة من الالتزام والتميز جعلت من الفهاد خياراً موثوقاً في السوق السوري والإقليمي." data-en="A long journey of commitment and excellence that made Fahad a trusted choice locally & regionally.">مسيرة طويلة من الالتزام والتميز جعلت من الفهاد خياراً موثوقاً في السوق السوري والإقليمي.</p>
                 </div>
             </div>
         </div>
@@ -1051,31 +994,30 @@
                             class="flex items-center gap-4 p-4 rounded-2xl border border-slate-200 hover:border-[#B8860B]/50 transition group bg-white">
                             <div
                                 class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-[#B8860B] text-xl">
-                                <i class="fas fa-mobile-alt"></i></div>
+                                <i class="fas fa-phone-alt"></i></div>
                             <div>
-                                <div class="text-xs text-slate-500" data-ar="جوال" data-en="Mobile">جوال</div>
-                                <div class="font-bold text-lg group-hover:text-[#B8860B] transition">0986 022 225</div>
+                                <div class="text-xs text-slate-500" data-ar="اتصال" data-en="Call">اتصال</div>
+                                <div class="font-bold text-lg group-hover:text-[#B8860B] transition num-ltr" dir="ltr">0986 022 225</div>
                             </div>
                         </a>
                         <a href="tel:0933320674"
                             class="flex items-center gap-4 p-4 rounded-2xl border border-slate-200 hover:border-[#B8860B]/50 transition group bg-white">
                             <div
                                 class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-[#B8860B] text-xl">
-                                <i class="fas fa-phone-alt"></i></div>
-                            <div>
-                                <div class="text-xs text-slate-500" data-ar="جوال" data-en="Mobile">جوال</div>
-                                <div class="font-bold text-lg group-hover:text-[#B8860B] transition">0933 320 674</div>
-                            </div>
-                        </a>
-                        <a href="tel:6929225"
-                            class="flex items-center gap-4 p-4 rounded-2xl border border-slate-200 hover:border-[#B8860B]/50 transition group bg-white">
-                            <div
-                                class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-[#B8860B] text-xl">
                                 <i class="fas fa-phone"></i></div>
                             <div>
-                                <div class="text-xs text-slate-500" data-ar="هاتف أرضي" data-en="Landline">هاتف أرضي
-                                </div>
-                                <div class="font-bold text-lg group-hover:text-[#B8860B] transition">692 9225</div>
+                                <div class="text-xs text-slate-500" data-ar="اتصال" data-en="Call">اتصال</div>
+                                <div class="font-bold text-lg group-hover:text-[#B8860B] transition num-ltr" dir="ltr">0933 320 674</div>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/963986022225" target="_blank"
+                            class="flex items-center gap-4 p-4 rounded-2xl border border-slate-200 hover:border-emerald-500/50 transition group bg-white">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 text-2xl">
+                                <i class="fab fa-whatsapp"></i></div>
+                            <div>
+                                <div class="text-xs text-slate-500" data-ar="واتس اب" data-en="WhatsApp">واتس اب</div>
+                                <div class="font-bold text-lg group-hover:text-emerald-600 transition num-ltr" dir="ltr">0986 022 225</div>
                             </div>
                         </a>
                     </div>
@@ -1096,8 +1038,8 @@
                                 <div>
                                     <label class="block text-sm font-semibold mb-2 text-slate-600" data-ar="رقم الهاتف"
                                         data-en="Phone Number">رقم الهاتف</label>
-                                    <input type="tel" required
-                                        class="w-full px-5 py-3.5 bg-[#F8F7F4] border border-slate-200 rounded-2xl focus:outline-none focus:border-[#B8860B]"
+                                    <input type="tel" required dir="ltr"
+                                        class="w-full px-5 py-3.5 bg-[#F8F7F4] border border-slate-200 rounded-2xl focus:outline-none focus:border-[#B8860B] num-ltr"
                                         placeholder="09xxxxxxxx" data-placeholder-ar="09xxxxxxxx"
                                         data-placeholder-en="09xxxxxxxx">
                                 </div>
@@ -1169,7 +1111,7 @@
                 </div>
             </div>
 
-            <div class="text-center text-xs text-slate-400 mt-10 pt-8 border-t">
+            <div class="text-center text-xs text-slate-400 mt-10 pt-8 border-t num-ltr" dir="ltr">
                 © 2025 Fahad Foods. All Rights Reserved. Designed by Purple Art Agency
             </div>
         </div>
